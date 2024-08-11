@@ -1,0 +1,197 @@
+.chat {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('chat-bg.jpg'); */
+    background-image: url('chat-bg.jpg');
+    flex: 2;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1f2937; /* Dark background for a sleek look */
+    color: #e5e7eb; /* Light text color for contrast */
+    font-family: Arial, sans-serif; /* Clean, modern font */
+
+    .top {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: #2d3748; /* Slightly lighter background for the top bar */
+        
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #4a5568; /* Subtle border around profile picture */
+            }
+
+            .texts {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+                span {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #ffffff; /* White color for username */
+                }
+
+                p {
+                    font-size: 12px;
+                    font-weight: 300;
+                    color: #cbd5e0; /* Light grey color for the user status */
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                filter: brightness(0) invert(1); /* Make icons white */
+            }
+        }
+    }
+
+    .center {
+        padding: 15px;
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .message {
+            max-width: 75%;
+            display: flex;
+            gap: 15px;
+
+            &.own {
+                align-self: flex-end;
+
+                .text {
+                    p {
+                        background: linear-gradient(135deg, #a3d9d9, #e0f7f7); /* Gentle greenish-blue gradient */
+                        color: #1a202c; /* Dark text color for contrast */
+                        border: 1px solid #a3d9d9; /* Border matching the background */
+                    }
+                }
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid #4a5568; /* Subtle border around sender's profile picture */
+            }
+
+            .text {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                p {
+                    padding: 15px;
+                    background: linear-gradient(135deg, #dcd6e2, #e8eaf6); /* Soft greyish-purple gradient */
+                    color: #1a202c; /* Dark text color for contrast */
+                    border-radius: 12px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for messages */
+                }
+
+                span {
+                    font-size: 12px;
+                    color: #cbd5e0; /* Light grey color for timestamps */
+                }
+            }
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #2d3748; /* Matching background color for the track */
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #4a5568; /* Darker thumb color */
+        border-radius: 10px;
+    }
+
+    .bottom {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: #2d3748; /* Matching bottom bar background */
+        border-radius: 0 0 10px 10px;
+        gap: 15px;
+        margin-top: auto;
+
+        .icons {
+            display: flex;
+            gap: 15px;
+
+            img {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                filter: brightness(0) invert(1); /* Make icons white */
+            }
+        }
+
+        input {
+            flex: 1;
+            background-color: #4a5568;
+            border: none;
+            outline: none;
+            color: #e5e7eb;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for input */
+        }
+
+        .emoji {
+            position: relative;
+
+            .picker {
+                position: absolute;
+                bottom: 60px;
+                left: 0;
+            }
+        }
+
+        .sendButton {
+            background-color: #2b6cb0; /* Soft blue for send button */
+            color: #e5e7eb;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sendButton:hover {
+            background-color: #2b6cb0; /* Slightly darker blue on hover */
+            background-color: #2b6cb0; /* Slightly darker blue on hover */
+        }
+    }
+}
+
